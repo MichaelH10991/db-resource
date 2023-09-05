@@ -1,6 +1,14 @@
 const mongoose = require("mongoose");
 
 const db = (config, schemas) => {
+  if (!config) {
+    throw new Error("A configuration object must be provided.");
+  }
+
+  if (!schemas) {
+    throw new Error("A schema must be provided.");
+  }
+
   try {
     const conn = mongoose.createConnection(config.uri);
     if (conn) {
