@@ -19,7 +19,10 @@ const db = (config, schemas) => {
       return { ...acc, [schema.name]: Model };
     }, {});
   } catch (error) {
-    console.log("error: here was an error setting up the mongo connection", e);
+    console.log(
+      "error: here was an error setting up the mongo connection",
+      error
+    );
   }
 };
 
