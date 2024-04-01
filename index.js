@@ -12,7 +12,7 @@ const db = (config, schemas) => {
   try {
     const conn = mongoose.createConnection(config.uri);
     if (conn) {
-      console.log("info: Connection successfully created with:", config.uri);
+      console.log("info: Connection successfully created with:", "redacted");
     }
     return schemas.reduce((acc, schema) => {
       const Model = conn.model(schema.name, schema.schema);
